@@ -16,14 +16,6 @@ def browser(request):
     browser = webdriver.Chrome()
     link = "http://selenium1py.pythonanywhere.com/{}/catalogue/coders-at-work_207/".format(language)
     browser.get(link)
-    # try:
-    #     wrong_page = WebDriverWait(browser, 10).until(
-    #         EC.presence_of_element_located((By.XPATH, "//a[@onclick='javascript:history.go(-1);']"))
-    #     )
-    #     if wrong_page is not None:
-    #         raise pytest.UsageError("--language does not exist")
-    # except:
-    #     print("Language does not exist")
     yield browser
     print("\nquit browser..")
     browser.quit()
